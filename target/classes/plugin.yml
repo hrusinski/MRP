@@ -1,0 +1,4 @@
+name: MRP
+version: '1.0'
+main: hrusinski.mrp.MRP
+api-version: '1.20'

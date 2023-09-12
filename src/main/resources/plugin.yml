@@ -1,0 +1,4 @@
+name: MRP
+version: '${project.version}'
+main: hrusinski.mrp.MRP
+api-version: '1.20'

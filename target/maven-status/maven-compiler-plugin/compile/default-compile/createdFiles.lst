@@ -1,0 +1,4 @@
+hrusinski\mrp\Config\Config.class
+hrusinski\mrp\MRP.class
+hrusinski\mrp\Listeners\PlayerJoinQuit.class
+hrusinski\mrp\Config\Language.class
