@@ -1,4 +1,9 @@
+hrusinski\mrp\Commands\CC.class
 hrusinski\mrp\Config\Config.class
+hrusinski\mrp\Func\DeathToSpec.class
 hrusinski\mrp\MRP.class
+hrusinski\mrp\Func\CitizenCard.class
+hrusinski\mrp\Config\PlayerConfig.class
+hrusinski\mrp\Commands\CCName.class
 hrusinski\mrp\Listeners\PlayerJoinQuit.class
 hrusinski\mrp\Config\Language.class

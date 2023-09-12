@@ -2,3 +2,10 @@ name: MRP
 version: '1.0'
 main: hrusinski.mrp.MRP
 api-version: '1.20'
+
+commands:
+  cardName:
+    usage: /cardName {newName}
+
+  Card:
+    usage: /Card {player}/{empty}

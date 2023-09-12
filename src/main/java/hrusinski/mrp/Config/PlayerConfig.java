@@ -18,7 +18,9 @@ public class PlayerConfig implements Listener {
         String pname = player.getName();
 
         File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
-        FileConfiguration configP = YamlConfiguration.loadConfiguration(file);
+        FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
+
+        configP.set("Status", "Dead");
 
         try {
             configP.save(fileP);
