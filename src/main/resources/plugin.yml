@@ -7,5 +7,17 @@ commands:
   cardName:
     usage: /cardName {newName}
 
+  cardSurname:
+    usage: /cardName {newSurname}
+
+  cardAge:
+    usage: /cardName {newAge}
+
+  cardGender:
+    usage: /cardName {newGender}
+
+  cardNationality:
+    usage: /cardName {newNationality}
+
   Card:
     usage: /Card {player}/{empty}

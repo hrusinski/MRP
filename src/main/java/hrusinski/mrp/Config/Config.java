@@ -16,6 +16,7 @@ public class Config {
         if(!config.isLocation("region")){
             config.set("region", "EN");
             config.set("Func.OneLive", "true");
+            config.set("Func.CustomHp", "10");
             try{
                 config.save(file);
             } catch (IOException e){

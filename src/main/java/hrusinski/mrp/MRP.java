@@ -1,7 +1,6 @@
 package hrusinski.mrp;
 
-import hrusinski.mrp.Commands.CC;
-import hrusinski.mrp.Commands.CCName;
+import hrusinski.mrp.Commands.*;
 import hrusinski.mrp.Func.DeathToSpec;
 import hrusinski.mrp.Listeners.PlayerJoinQuit;
 import org.bukkit.Bukkit;
@@ -75,6 +74,10 @@ public final class MRP extends JavaPlugin {
         }
 
         getCommand("cardName").setExecutor(new CCName());
+        getCommand("cardSurname").setExecutor(new CCSurname());
+        getCommand("cardAge").setExecutor(new CCAge());
+        getCommand("cardGender").setExecutor(new CCGender());
+        getCommand("cardNationality").setExecutor(new CCNationality());
         getCommand("Card").setExecutor(new CC());
 
 

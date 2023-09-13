@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 import java.io.File;
+import java.io.IOException;
 
 public class DeathToSpec implements Listener {
 
@@ -39,6 +40,11 @@ public class DeathToSpec implements Listener {
             File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
             FileConfiguration configP = YamlConfiguration.loadConfiguration(file);
             configP.set("Status", "Died");
+            try {
+                configP.save(fileP);
+            } catch (IOException e){
+                e.printStackTrace(System.out);
+            }
         }
     }
 }

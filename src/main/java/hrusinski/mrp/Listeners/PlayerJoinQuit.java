@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static hrusinski.mrp.Config.PlayerConfig.createPlayerConfig;
 import static hrusinski.mrp.Func.CitizenCard.createCC;
+import static hrusinski.mrp.Func.CustomHp.setMaxHp;
 
 public class PlayerJoinQuit implements Listener {
 
@@ -38,6 +39,7 @@ public class PlayerJoinQuit implements Listener {
         if (!fileP.exists()){
             createPlayerConfig(player);
         }
+        setMaxHp(player);
 
         try {
             TimeUnit.SECONDS.sleep(2);
