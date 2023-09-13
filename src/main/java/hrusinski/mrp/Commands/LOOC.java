@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class ME implements CommandExecutor {
+public class LOOC implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String string, @NotNull String[] args) {
@@ -27,27 +27,27 @@ public class ME implements CommandExecutor {
 
             String pname = player.getName();
 
-            String action = "";
+            String text = "";
 
             for (int i = 1; i < args.length; i++) {
-                action += args[i] + " ";
+                text += args[i] + " ";
             }
 
             File fileCC = new File(MRP.instance.getDataFolder(), "/CC/" + pname + ".yml");
             FileConfiguration configCC = YamlConfiguration.loadConfiguration(fileCC);
 
             for (Player players : Bukkit.getOnlinePlayers()) {
-                if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.Me&DoBlockDistance")) {
+                if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.LOOCDistance")) {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString(configEN.getString("Messages.Command.Me").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action))));
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString(configEN.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
 
                 } else {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString(configCZ.getString("Messages.Command.Me").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action))));
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString(configCZ.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
                 }
             }
 

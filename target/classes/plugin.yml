@@ -21,3 +21,12 @@ commands:
 
   Card:
     usage: /Card {player}/{empty}
+
+  me:
+    /me {action}
+
+  do:
+    /do {action}
+
+  looc:
+    /do {text}

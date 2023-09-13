@@ -27,3 +27,6 @@ commands:
 
   do:
     /do {action}
+
+  looc:
+    /do {text}

@@ -24,6 +24,10 @@ public class Language {
         configCZ.set("Messages.Command.CC.Name", "&4Tento příkaz smí použít pouze hráč.");
         configCZ.set("Messages.Command.CC.PlayerNotFound", "&4Špatně zadaný nick hráče.");
         configCZ.set("Messages.Command.Error", "&4Špatně zadaný příkaz.");
+        configCZ.set("Messages.Command.Me", "&b&l[ME] &r&4%name% %action%");
+        configCZ.set("Messages.Command.Do", "&b&l[DO] &r&4%name% %action%");
+        configCZ.set("Messages.Command.LOOC", "&b&l[LOOC] &r&4%nick% %text%");
+        configCZ.set("Messages.OOC", "&b&l[OOC] &r&4%nick% %message%");
         configCZ.set("CC.Name", "Jméno");
         configCZ.set("CC.Surname", "Přijmení");
         configCZ.set("CC.Age", "Věk");
@@ -52,8 +56,10 @@ public class Language {
         configEN.set("Messages.Command.CC.Name", "&4You changed your name.");
         configEN.set("Messages.Command.CC.PlayerNotFound", "&4Wrong player nickname.");
         configEN.set("Messages.Command.Error", "&4Wrong command.");
-        configEN.set("Messages.Command.Me", "&4%name% %action%");
-        configEN.set("Messages.Command.Do", "&4%name% %action%");
+        configEN.set("Messages.Command.Me", "&b&l[ME] &r&4%name% %action%");
+        configEN.set("Messages.Command.Do", "&b&l[DO] &r&4%name% %action%");
+        configEN.set("Messages.Command.LOOC", "&b&l[LOOC] &r&4%nick% %text%");
+        configEN.set("Messages.OOC", "&b&l[OOC] &r&4%nick% %message%");
         configEN.set("CC.Name", "Name");
         configEN.set("CC.Surname", "Surname");
         configEN.set("CC.Age", "Age");

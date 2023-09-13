@@ -2,6 +2,7 @@ package hrusinski.mrp;
 
 import hrusinski.mrp.Commands.*;
 import hrusinski.mrp.Func.DeathToSpec;
+import hrusinski.mrp.Func.OOC;
 import hrusinski.mrp.Listeners.PlayerJoinQuit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -66,6 +67,8 @@ public final class MRP extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoinQuit(), this);
         getServer().getPluginManager().registerEvents(new DeathToSpec(), this);
 
+        getServer().getPluginManager().registerEvents(new OOC(), this);
+
 
         if (config.get("region") == "CZ") {
             Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "" + ChatColor.BOLD + "MRP" + ChatColor.RESET.YELLOW + configCZ.getString("Logger.EnablingPlugin") + "...");
@@ -79,6 +82,10 @@ public final class MRP extends JavaPlugin {
         getCommand("cardGender").setExecutor(new CCGender());
         getCommand("cardNationality").setExecutor(new CCNationality());
         getCommand("Card").setExecutor(new CC());
+
+        getCommand("LOOC").setExecutor(new LOOC());
+        getCommand("ME").setExecutor(new ME());
+        getCommand("DO").setExecutor(new DO());
 
 
         if (config.get("region") == "CZ") {
