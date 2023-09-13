@@ -87,6 +87,8 @@ public final class MRP extends JavaPlugin {
         getCommand("me").setExecutor(new MEcmd());
         getCommand("do").setExecutor(new DOcmd());
 
+        getCommand("announce").setExecutor(new Announce());
+
 
         if (config.get("region") == "CZ") {
             Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "" + ChatColor.BOLD + "MRP" + ChatColor.RESET.YELLOW + configCZ.getString("Logger.EnablePlugin"));

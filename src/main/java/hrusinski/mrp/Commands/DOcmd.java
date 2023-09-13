@@ -29,7 +29,7 @@ public class DOcmd implements CommandExecutor {
 
             String action = "";
 
-            for (int i = 1; i < args.length; i++) {
+            for (int i = 0; i < args.length; i++) {
                 action += args[i] + " ";
             }
 
@@ -38,16 +38,17 @@ public class DOcmd implements CommandExecutor {
 
             for (Player players : Bukkit.getOnlinePlayers()) {
                 if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.Me&DoBlockDistance")) {
-                    File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
-                    FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
+                    if (config.getString("region").equals("EN")) {
+                        File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
+                        FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.Do").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replace("%action%", action))));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.Do").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action)));
+                    } else {
+                        File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
+                        FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.Do").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replace("%action%", action))));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.Do").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action)));
+                    }
                 }
             }
 

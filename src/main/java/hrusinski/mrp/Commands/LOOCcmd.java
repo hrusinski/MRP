@@ -29,7 +29,7 @@ public class LOOCcmd implements CommandExecutor {
 
             String text = "";
 
-            for (int i = 1; i < args.length; i++) {
+            for (int i = 0; i < args.length; i++) {
                 text += args[i] + " ";
             }
 
@@ -38,16 +38,17 @@ public class LOOCcmd implements CommandExecutor {
 
             for (Player players : Bukkit.getOnlinePlayers()) {
                 if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.LOOCDistance")) {
-                    File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
-                    FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
+                    if (config.getString("region").equals("EN")) {
+                        File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
+                        FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.LOOC").replaceAll("%nick%", pname).replaceAll("%text%", text)));
+                    } else {
+                        File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
+                        FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.LOOC").replaceAll("%nick%", pname).replaceAll("%text%", text)));
+                    }
                 }
             }
 

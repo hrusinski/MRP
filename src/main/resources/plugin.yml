@@ -30,3 +30,6 @@ commands:
 
   looc:
     usage: /do {text}
+
+  announce:
+    usage: /announce {text}

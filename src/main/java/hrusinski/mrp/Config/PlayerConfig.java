@@ -20,7 +20,7 @@ public class PlayerConfig implements Listener {
         File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
-        configP.set("IP", player.getAddress());
+        configP.set("IP", player.getAddress().toString());
         configP.set("Status", "Dead");
 
         try {

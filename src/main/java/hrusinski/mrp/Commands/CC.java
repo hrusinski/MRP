@@ -69,13 +69,13 @@ public class CC implements CommandExecutor {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', " "));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', " "));
                 }
             } else if (args.length == 1) {
                 if(config.getString("region").equals("EN")){
