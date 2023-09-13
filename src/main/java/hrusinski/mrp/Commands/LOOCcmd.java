@@ -41,13 +41,13 @@ public class LOOCcmd implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString(configEN.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
 
                 } else {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString(configCZ.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.LOOC").replaceAll("%nick%",pname).replaceAll("%text%", text))));
                 }
             }
 

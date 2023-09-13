@@ -18,6 +18,7 @@ public class Config {
             config.set("Func.OneLive", "true");
             config.set("Func.CustomHp", 10);
             config.set("Func.Me&DoBlockDistance", 15);
+            config.set("Func.LOOCDistance", 15);
             try{
                 config.save(file);
             } catch (IOException e){

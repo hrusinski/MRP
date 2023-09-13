@@ -41,13 +41,13 @@ public class DOcmd implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString(configEN.getString("Messages.Command.Do").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action))));
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.Do").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replace("%action%", action))));
 
                 } else {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString(configCZ.getString("Messages.Command.Do").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action))));
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.Do").replaceAll("%name%",configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replace("%action%", action))));
                 }
             }
 
