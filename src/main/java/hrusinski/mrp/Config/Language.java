@@ -23,11 +23,12 @@ public class Language {
         configCZ.set("Messages.Command.NotPlayer", "&4Tento příkaz smí použít pouze hráč.");
         configCZ.set("Messages.Command.CC.Name", "&4Tento příkaz smí použít pouze hráč.");
         configCZ.set("Messages.Command.CC.PlayerNotFound", "&4Špatně zadaný nick hráče.");
-        configCZ.set("CC.Name", "&fJméno");
-        configCZ.set("CC.Surname", "&fPřijmení");
-        configCZ.set("CC.Age", "&fVěk");
-        configCZ.set("CC.Gender", "&fPohlaví");
-        configCZ.set("CC.Nationality", "&fNárodnost");
+        configCZ.set("Messages.Command.Error", "&4Špatně zadaný příkaz.");
+        configCZ.set("CC.Name", "Jméno");
+        configCZ.set("CC.Surname", "Přijmení");
+        configCZ.set("CC.Age", "Věk");
+        configCZ.set("CC.Gender", "Pohlaví");
+        configCZ.set("CC.Nationality", "Národnost");
 
         try{
             configCZ.save(fileCZ);
@@ -48,13 +49,14 @@ public class Language {
         configEN.set("Messages.Events.PlayerQuit", "&6&l%player% &r&6left city.");
         configEN.set("Messages.Events.Death", "&c&l%player% &r&died.");
         configEN.set("Messages.Command.NotPlayer", "&4This command can execute player only.");
-        configEN.set("Messages.Command.CC.Name", "&eYou changed your name.");
-        configEN.set("Messages.Command.CC.PlayerNotFound", "&eWrong player nickname.");
-        configEN.set("CC.Name", "&fName");
-        configEN.set("CC.Surname", "&fSurname");
-        configEN.set("CC.Age", "&fAge");
-        configEN.set("CC.Gender", "&fGender");
-        configEN.set("CC.Nationality", "&fNationality");
+        configEN.set("Messages.Command.CC.Name", "&4You changed your name.");
+        configEN.set("Messages.Command.CC.PlayerNotFound", "&4Wrong player nickname.");
+        configEN.set("Messages.Command.Error", "&4Wrong command.");
+        configEN.set("CC.Name", "Name");
+        configEN.set("CC.Surname", "Surname");
+        configEN.set("CC.Age", "Age");
+        configEN.set("CC.Gender", "Gender");
+        configEN.set("CC.Nationality", "Nationality");
 
         try{
             configEN.save(fileEN);

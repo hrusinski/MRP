@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import static hrusinski.mrp.Config.PlayerConfig.createPlayerConfig;
 import static hrusinski.mrp.Func.CitizenCard.createCC;
@@ -31,6 +32,19 @@ public class PlayerJoinQuit implements Listener {
         File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
+        if (!fileCC.exists()) {
+            createCC(player);
+        }
+        if (!fileP.exists()){
+            createPlayerConfig(player);
+        }
+
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         if(configP.getString("Status").equals("Died")) return;
         if(configP.getString("Status").equals("Dead")) return;
 
@@ -45,12 +59,6 @@ public class PlayerJoinQuit implements Listener {
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
             event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Events.PlayerJoin").replaceAll("%player%", player.getName())));
-        }
-        if (!fileCC.exists()) {
-            createCC(player);
-        }
-        if (!fileP.exists()){
-            createPlayerConfig(player);
         }
     }
 

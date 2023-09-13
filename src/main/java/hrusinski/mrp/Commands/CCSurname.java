@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 
-public class CCName implements CommandExecutor {
+public class CCSurname implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String string, @NotNull String[] args) {
@@ -34,14 +34,14 @@ public class CCName implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    configCC.set("Info.Name", args[0].toString());
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.CC.Name")));
+                    configCC.set("Info.Surname", args[0].toString());
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.CC.Surname")));
                 } else {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
-                    configCC.set("Info.Name", args[0].toString());
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.CC.Name")));
+                    configCC.set("Info.Surname", args[0].toString());
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.CC.Surname")));
                 }
                 try {
                     configCC.save(fileCC);
