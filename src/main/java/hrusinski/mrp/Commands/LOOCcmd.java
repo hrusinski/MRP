@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class LOOC implements CommandExecutor {
+public class LOOCcmd implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String string, @NotNull String[] args) {

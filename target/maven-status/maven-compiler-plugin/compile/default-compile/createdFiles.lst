@@ -1,14 +1,14 @@
 hrusinski\mrp\Commands\CC.class
-hrusinski\mrp\Commands\ME.class
-hrusinski\mrp\Commands\DO.class
 hrusinski\mrp\Func\DeathToSpec.class
 hrusinski\mrp\Commands\CCSurname.class
 hrusinski\mrp\Func\OOC.class
+hrusinski\mrp\Commands\LOOCcmd.class
 hrusinski\mrp\Commands\CCNationality.class
 hrusinski\mrp\Func\CustomHp.class
 hrusinski\mrp\Commands\CCAge.class
+hrusinski\mrp\Commands\DOcmd.class
+hrusinski\mrp\Commands\MEcmd.class
 hrusinski\mrp\Commands\CCGender.class
-hrusinski\mrp\Commands\LOOC.class
 hrusinski\mrp\Config\Config.class
 hrusinski\mrp\MRP.class
 hrusinski\mrp\Func\CitizenCard.class

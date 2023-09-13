@@ -83,9 +83,9 @@ public final class MRP extends JavaPlugin {
         getCommand("cardNationality").setExecutor(new CCNationality());
         getCommand("Card").setExecutor(new CC());
 
-        getCommand("LOOC").setExecutor(new LOOC());
-        getCommand("ME").setExecutor(new ME());
-        getCommand("DO").setExecutor(new DO());
+        getCommand("looc").setExecutor(new LOOCcmd());
+        getCommand("me").setExecutor(new MEcmd());
+        getCommand("do").setExecutor(new DOcmd());
 
 
         if (config.get("region") == "CZ") {

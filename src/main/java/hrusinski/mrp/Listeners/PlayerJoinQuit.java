@@ -42,16 +42,6 @@ public class PlayerJoinQuit implements Listener {
         }
         setMaxHp(player);
 
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        if (configP.getString("Status").equals("Dead") || configP.getString("Status").equals("Died")){
-           player.setGameMode(GameMode.SPECTATOR);
-        }
-
         if (config.getString("region").equals("CZ")) {
             File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
             FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
@@ -63,6 +53,10 @@ public class PlayerJoinQuit implements Listener {
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
             event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Events.PlayerJoin").replaceAll("%player%", player.getName())));
+        }
+
+        if (configP.getString("Status").equals("Dead") || configP.getString("Status").equals("Died")){
+            player.setGameMode(GameMode.SPECTATOR);
         }
     }
 

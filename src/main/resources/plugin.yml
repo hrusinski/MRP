@@ -23,10 +23,10 @@ commands:
     usage: /Card {player}/{empty}
 
   me:
-    /me {action}
+    usage: /me {action}
 
   do:
-    /do {action}
+    usage: /do {action}
 
   looc:
-    /do {text}
+    usage: /do {text}
