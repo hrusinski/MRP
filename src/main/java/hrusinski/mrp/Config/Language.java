@@ -75,11 +75,11 @@ public class Language {
         configEN.set("Messages.Command.LOOC", "&b&l[LOOC] &r&f%nick% %text%");
         configEN.set("Messages.Command.Announce", "&c&l[ANNOUNCEMENT] &f&l%text%");
         configEN.set("Messages.OOC", "&b&l[OOC] &r&f%nick% %message%");
-        configEN.set("Messages.CC.Name", "&fJméno: ");
-        configEN.set("Messages.CC.Surname", "&fPřijmení: ");
-        configEN.set("Messages.CC.Age", "&fVěk: ");
-        configEN.set("Messages.CC.Gender", "&fPohlaví: ");
-        configEN.set("Messages.CC.Nationality", "&fNárodnost: ");
+        configEN.set("Messages.CC.Name", "&fName: ");
+        configEN.set("Messages.CC.Surname", "&fSurname: ");
+        configEN.set("Messages.CC.Age", "&fAge: ");
+        configEN.set("Messages.CC.Gender", "&fGender: ");
+        configEN.set("Messages.CC.Nationality", "&fNationality: ");
         configEN.set("CC.Name", "Name");
         configEN.set("CC.Surname", "Surname");
         configEN.set("CC.Age", "Age");
