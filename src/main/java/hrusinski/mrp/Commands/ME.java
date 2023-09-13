@@ -21,6 +21,10 @@ public class ME implements CommandExecutor {
 
         if(sender instanceof Player){
 
+            String action;
+
+            for (int i =)
+
         } else {
         if(config.getString("region").equals("EN")){
             File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
