@@ -36,22 +36,22 @@ public class CC implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lName: &r&f" + configCC.getString("Info.Name")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lSurname: &r&f" + configCC.getString("Info.Surname")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lAge: &r&f" + configCC.getString("Info.Age")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lGender: &r&f" + configCC.getString("Info.Gender")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lNationality: &r&f" + configCC.getString("Info.Nationality")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Name") + configCC.getString("Info.Name")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Surname") + configCC.getString("Info.Surname")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Age") + configCC.getString("Info.Age")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Gender") + configCC.getString("Info.Gender")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Nationality") + configCC.getString("Info.Nationality")));
 
                 } else {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
                     target.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l"+configCZ.getString("CC")+": &r&f" + configCC.getString("Info.Name")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lPřijmení: &r&f" + configCC.getString("Info.Surname")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lVěk: &r&f" + configCC.getString("Info.Age")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lPohlaví: &r&f" + configCC.getString("Info.Gender")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lNárodnost: &r&f" + configCC.getString("Info.Nationality")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Name") + configCC.getString("Info.Name")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Surname") + configCC.getString("Info.Surname")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Age") + configCC.getString("Info.Age")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Gender") + configCC.getString("Info.Gender")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Nationality") + configCC.getString("Info.Nationality")));
                     target.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
                 }
             } else if (args.length == 0) {
@@ -59,22 +59,22 @@ public class CC implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lName: &r&f" + configCC.getString("Info.Name")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lSurname: &r&f" + configCC.getString("Info.Surname")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lAge: &r&f" + configCC.getString("Info.Age")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lGender: &r&f" + configCC.getString("Info.Gender")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lNationality: &r&f" + configCC.getString("Info.Nationality")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Name")  + configCC.getString("Info.Name")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Surname")  + configCC.getString("Info.Surname")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Age")  + configCC.getString("Info.Age")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Gender")  + configCC.getString("Info.Gender")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("CC.Nationality")  + configCC.getString("Info.Nationality")));
 
                 } else {
                     File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
                     FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
 
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l"+configCZ.getString("CC")+": &r&f" + configCC.getString("Info.Name")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lPřijmení: &r&f" + configCC.getString("Info.Surname")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lVěk: &r&f" + configCC.getString("Info.Age")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lPohlaví: &r&f" + configCC.getString("Info.Gender")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&lNárodnost: &r&f" + configCC.getString("Info.Nationality")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Name") + configCC.getString("Info.Name")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Surname") + configCC.getString("Info.Surname")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Age") + configCC.getString("Info.Age")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Gender") + configCC.getString("Info.Gender")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("CC.Nationality") + configCC.getString("Info.Nationality")));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
                 }
             } else if (args.length == 1) {

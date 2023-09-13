@@ -2,6 +2,7 @@ package hrusinski.mrp.Listeners;
 
 import hrusinski.mrp.MRP;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -47,8 +48,9 @@ public class PlayerJoinQuit implements Listener {
             throw new RuntimeException(e);
         }
 
-        if(configP.getString("Status").equals("Died")) return;
-        if(configP.getString("Status").equals("Dead")) return;
+        if (configP.getString("Status").equals("Dead") || configP.getString("Status").equals("Died")){
+           player.setGameMode(GameMode.SPECTATOR);
+        }
 
         if (config.getString("region").equals("CZ")) {
             File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");

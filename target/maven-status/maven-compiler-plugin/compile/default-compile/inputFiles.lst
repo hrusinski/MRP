@@ -1,9 +1,14 @@
 C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Listeners\PlayerJoinQuit.java
 C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Func\CitizenCard.java
 C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Func\DeathToSpec.java
-C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Config\PlayerConfig.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CCGender.java
 C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CCName.java
-C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Config\Language.java
-C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CC.java
 C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Config\Config.java
 C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\MRP.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CCNationality.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Config\PlayerConfig.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CCSurname.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CCAge.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Config\Language.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Commands\CC.java
+C:\Users\tomas\Desktop\MRP\MRP\src\main\java\hrusinski\mrp\Func\CustomHp.java

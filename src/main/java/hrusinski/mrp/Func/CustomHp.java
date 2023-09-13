@@ -13,6 +13,6 @@ public class CustomHp {
         File file = new File(MRP.instance.getDataFolder(), "config.yml");
         FileConfiguration config = YamlConfiguration.loadConfiguration(file);
 
-        player.setMaxHealth(config.getDouble("Func.CustomHp");
+        player.setMaxHealth(config.getDouble("Func.CustomHp"));
     }
 }

@@ -2,6 +2,7 @@ hrusinski\mrp\Commands\CC.class
 hrusinski\mrp\Func\DeathToSpec.class
 hrusinski\mrp\Commands\CCSurname.class
 hrusinski\mrp\Commands\CCNationality.class
+hrusinski\mrp\Func\CustomHp.class
 hrusinski\mrp\Commands\CCAge.class
 hrusinski\mrp\Commands\CCGender.class
 hrusinski\mrp\Config\Config.class
