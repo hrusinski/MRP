@@ -52,6 +52,8 @@ public class Language {
         configEN.set("Messages.Command.CC.Name", "&4You changed your name.");
         configEN.set("Messages.Command.CC.PlayerNotFound", "&4Wrong player nickname.");
         configEN.set("Messages.Command.Error", "&4Wrong command.");
+        configEN.set("Messages.Command.Me", "&4%name% %action%");
+        configEN.set("Messages.Command.Do", "&4%name% %action%");
         configEN.set("CC.Name", "Name");
         configEN.set("CC.Surname", "Surname");
         configEN.set("CC.Age", "Age");

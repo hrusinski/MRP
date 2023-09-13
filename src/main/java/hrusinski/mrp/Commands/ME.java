@@ -1,6 +1,8 @@
 package hrusinski.mrp.Commands;
 
 import hrusinski.mrp.MRP;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,9 +23,27 @@ public class ME implements CommandExecutor {
 
         if(sender instanceof Player){
 
-            String action;
+            Player player = ((Player) sender).getPlayer();
 
-            for (int i =)
+            String action = "";
+            
+            for (int i = 1; i < args.length; i++) {
+                action += args[i] + " ";
+            }
+
+            for (Player players : Bukkit.getOnlinePlayers()) {
+                if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.Me&DoBlockDistance")) {
+                    File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
+                    FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
+
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("")));
+                } else {
+                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
+                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
+
+                    players.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
+                }
+            }
 
         } else {
         if(config.getString("region").equals("EN")){
