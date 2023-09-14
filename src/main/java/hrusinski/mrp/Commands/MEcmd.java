@@ -39,7 +39,7 @@ public class MEcmd implements CommandExecutor {
             for (Player players : Bukkit.getOnlinePlayers()) {
                 if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.Me&DoBlockDistance")) {
                     if (config.isSet("region")) {
-                        File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                        File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                         players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Me").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action)));
@@ -54,7 +54,7 @@ public class MEcmd implements CommandExecutor {
 
         } else {
             if (config.isSet("region")) {
-                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                 FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                 sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));

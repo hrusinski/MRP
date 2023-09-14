@@ -43,7 +43,7 @@ public class PlayerJoinQuit implements Listener {
         setMaxHp(player);
 
         if (config.isSet("region")) {
-            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
             FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
             event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));
@@ -77,7 +77,7 @@ public class PlayerJoinQuit implements Listener {
         FileConfiguration configP = YamlConfiguration.loadConfiguration(file);
 
         if (config.isSet("region")) {
-            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
             FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
             event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));

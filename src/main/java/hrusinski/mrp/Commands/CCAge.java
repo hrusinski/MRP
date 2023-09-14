@@ -31,7 +31,7 @@ public class CCAge implements CommandExecutor {
 
             if(args.length == 1){
                 if (config.isSet("region")) {
-                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                     FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                     configCC.set("Info.Age", args[0].toString());
@@ -49,7 +49,7 @@ public class CCAge implements CommandExecutor {
                 }
             } else {
                 if (config.isSet("region")) {
-                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                     FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                     sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.Error"));
@@ -63,7 +63,7 @@ public class CCAge implements CommandExecutor {
 
         } else {
             if (config.isSet("region")) {
-                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                 FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                 sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));

@@ -29,7 +29,7 @@ public class Announce implements CommandExecutor {
 
         for (Player players : Bukkit.getOnlinePlayers()) {
             if (config.isSet("region")) {
-                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                 FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                 players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Announce").replaceAll("%text%", text)));

@@ -27,7 +27,7 @@ public class OOC implements Listener {
         String message = event.getMessage();
 
         if (config.isSet("region")) {
-            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
             FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
             event.setFormat(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.OOC").replaceAll("%nick%", pname).replaceAll("%message%", message)));

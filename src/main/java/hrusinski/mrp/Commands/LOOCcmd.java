@@ -36,7 +36,7 @@ public class LOOCcmd implements CommandExecutor {
             for (Player players : Bukkit.getOnlinePlayers()) {
                 if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.LOOCDistance")) {
                     if (config.isSet("region")) {
-                        File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                        File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                         players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.LOOC").replaceAll("%nick%", pname).replaceAll("%text%", text)));
@@ -51,7 +51,7 @@ public class LOOCcmd implements CommandExecutor {
 
         } else {
             if (config.isSet("region")) {
-                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                 FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                 sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));

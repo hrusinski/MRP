@@ -73,7 +73,7 @@ public class CC implements CommandExecutor {
                 }
             } else if (args.length == 1) {
                 if (config.isSet("region")) {
-                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                     FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                     sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.CC.PlayerNotFound"));
@@ -85,7 +85,7 @@ public class CC implements CommandExecutor {
                 }
             } else {
                 if (config.isSet("region")) {
-                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                     FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                     sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.Error"));
@@ -100,7 +100,7 @@ public class CC implements CommandExecutor {
 
         } else {
             if (config.isSet("region")) {
-                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                 FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                 sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));

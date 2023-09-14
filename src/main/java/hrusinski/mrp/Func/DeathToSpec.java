@@ -25,7 +25,7 @@ public class DeathToSpec implements Listener {
 
         if(config.getBoolean("Func.OneLive")){
             if (config.isSet("region")) {
-                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                 FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.Death")));

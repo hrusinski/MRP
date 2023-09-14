@@ -20,7 +20,7 @@ public class CitizenCard {
         FileConfiguration configCC = YamlConfiguration.loadConfiguration(fileCC);
 
          if (config.isSet("region")) {
-             File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+             File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
              FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
              configCC.set("Info."+configLan.getString("CC.Name"), "Steve");
