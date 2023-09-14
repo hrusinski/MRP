@@ -31,7 +31,7 @@ public class PlayerJoinQuit implements Listener {
 
         File fileCC = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
 
-        File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
+        File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
         if (!fileCC.exists()) {
@@ -46,7 +46,7 @@ public class PlayerJoinQuit implements Listener {
             File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
             FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));
+            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.PlayerJoin").replaceAll("%player%", player.getName())));
         } else {
             File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
@@ -59,6 +59,9 @@ public class PlayerJoinQuit implements Listener {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
+        configP = YamlConfiguration.loadConfiguration(fileP);
 
         if (configP.getString("Status").equals("Dead") || configP.getString("Status").equals("Died")){
             player.setGameMode(GameMode.SPECTATOR);
