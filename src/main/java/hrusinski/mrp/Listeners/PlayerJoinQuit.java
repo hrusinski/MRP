@@ -60,10 +60,10 @@ public class PlayerJoinQuit implements Listener {
             throw new RuntimeException(e);
         }
 
-        fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
-        configP = YamlConfiguration.loadConfiguration(fileP);
+        File filePNewer = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
+        FileConfiguration configPNewer = YamlConfiguration.loadConfiguration(filePNewer);
 
-        if (configP.getString("Status").equals("Dead") || configP.getString("Status").equals("Died")){
+        if (configPNewer.getString("Status").equals("Dead") || configPNewer.getString("Status").equals("Died")){
             player.setGameMode(GameMode.SPECTATOR);
         }
     }
