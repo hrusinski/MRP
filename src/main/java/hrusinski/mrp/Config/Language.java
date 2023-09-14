@@ -17,6 +17,7 @@ public class Language {
         configCZ.set("Logger.EnablePlugin", " plugin se zapnul");
         configCZ.set("Logger.DisablingPlugin", " plugin se vypíná");
         configCZ.set("Logger.DisablePlugin", " plugin se vypnul");
+        configCZ.set("Messages.WrongLanguage", "&4&lŠpatně nastavený region(jazyk)!");
         configCZ.set("Messages.Events.PlayerJoin", "&6&l%player% &r&6přišel do města!");
         configCZ.set("Messages.Events.PlayerQuit", "&6&l%player% &r&6odešel z města.");
         configCZ.set("Messages.Events.Death", "&c&l%player% &r&cumřel.");
@@ -59,6 +60,7 @@ public class Language {
         configEN.set("Logger.EnablePlugin", " plugin was enabled");
         configEN.set("Logger.DisablingPlugin", " plugin is disabling");
         configEN.set("Logger.DisablePlugin", " plugin was disabled");
+        configEN.set("Messages.WrongLanguage", "&4&lWrong set region(language)!");
         configEN.set("Messages.Events.PlayerJoin", "&6&l%player% &r&6came to city!");
         configEN.set("Messages.Events.PlayerQuit", "&6&l%player% &r&6left city.");
         configEN.set("Messages.Events.Death", "&c&l%player% &r&died.");

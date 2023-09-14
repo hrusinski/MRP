@@ -24,18 +24,17 @@ public class DeathToSpec implements Listener {
         FileConfiguration config = YamlConfiguration.loadConfiguration(file);
 
         if(config.getBoolean("Func.OneLive")){
-            if(config.getString("region") == "EN"){
+            if (config.isSet("region")) {
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.Death")));
+                player.setGameMode(GameMode.SPECTATOR);
+            } else {
                 File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                 FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Events.Death")));
-                player.setGameMode(GameMode.SPECTATOR);
-            } else {
-                File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Events.Death")));
-                player.setGameMode(GameMode.SPECTATOR);
+                player.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
             }
             File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
             FileConfiguration configP = YamlConfiguration.loadConfiguration(file);

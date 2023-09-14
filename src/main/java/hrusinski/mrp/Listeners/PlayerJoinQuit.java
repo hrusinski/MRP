@@ -29,7 +29,7 @@ public class PlayerJoinQuit implements Listener {
         Player player = event.getPlayer();
         String pname = player.getName();
 
-        File fileCC = new File(MRP.instance.getDataFolder(), pname + ".yml");
+        File fileCC = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
 
         File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
@@ -42,17 +42,22 @@ public class PlayerJoinQuit implements Listener {
         }
         setMaxHp(player);
 
-        if (config.getString("region").equals("CZ")) {
-            File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-            FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
+        if (config.isSet("region")) {
+            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+            FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Events.PlayerJoin").replaceAll("%player%", player.getName())));
-        }
-        if (config.getString("region").equals("EN")) {
+            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));
+        } else {
             File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Events.PlayerJoin").replaceAll("%player%", player.getName())));
+            event.setJoinMessage(configEN.getString("Messages.WrongLanguage"));
+        }
+
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
         if (configP.getString("Status").equals("Dead") || configP.getString("Status").equals("Died")){
@@ -61,29 +66,27 @@ public class PlayerJoinQuit implements Listener {
     }
 
     @EventHandler
-    public void PlayerQuitChat(PlayerQuitEvent event){
+    public void PlayerQuitChat(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         String pname = player.getName();
 
-        File fileCC = new File(MRP.instance.getDataFolder(), pname + ".yml");
+        File fileCC = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
         FileConfiguration configCC = YamlConfiguration.loadConfiguration(fileCC);
 
-        File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
+        File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(file);
 
-        if(config.getString("region").equals("CZ")) {
-            File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-            FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
+        if (config.isSet("region")) {
+            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+            FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-            event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));
-        }
-        if(config.getString("region").equals("EN")) {
+            event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));
+        } else {
             File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-            event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Events.PlayerQuit").replaceAll("%player%", player.getName())));
+            event.setQuitMessage(configEN.getString("Messages.WrongLanguage"));
         }
-
         try {
             configCC.save(fileCC);
         } catch (IOException e) {
@@ -91,7 +94,7 @@ public class PlayerJoinQuit implements Listener {
         }
         try {
             configP.save(fileP);
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace(System.out);
         }
     }

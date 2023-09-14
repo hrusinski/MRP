@@ -32,7 +32,16 @@ public class CC implements CommandExecutor {
 
                 Player target = player.getServer().getPlayer(args[0]);
 
-                if(config.getString("region").equals("EN")){
+                if (config.isSet("region")) {
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
+                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
+                } else {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
@@ -41,80 +50,65 @@ public class CC implements CommandExecutor {
                     target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
                     target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
                     target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
-
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
                 }
             } else if (args.length == 0) {
-                if(config.getString("region").equals("EN")){
+                if (config.isSet("region")) {
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
+                } else {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Name")  + configCC.getString("Info.Name")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Surname")  + configCC.getString("Info.Surname")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Age")  + configCC.getString("Info.Age")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Gender")  + configCC.getString("Info.Gender")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Nationality")  + configCC.getString("Info.Nationality")));
-
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', " "));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', " "));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
                 }
             } else if (args.length == 1) {
-                if(config.getString("region").equals("EN")){
+                if (config.isSet("region")) {
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                    sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.CC.PlayerNotFound"));
+                } else {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.Command.CC.PlayerNotFound"));
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    sender.getServer().getConsoleSender().sendMessage(configCZ.getString("Messages.Command.CC.PlayerNotFound"));
+                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
                 }
             } else {
-                if(config.getString("region").equals("EN")){
+                if (config.isSet("region")) {
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                    sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.Error"));
+                } else {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.Command.Error"));
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    sender.getServer().getConsoleSender().sendMessage(configCZ.getString("Messages.Command.Error"));
+                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
                 }
             }
 
 
         } else {
-            if(config.getString("region").equals("EN")){
+            if (config.isSet("region")) {
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));
+            } else {
                 File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                 FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.Command.NotPlayer"));
-            } else {
-                File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                sender.getServer().getConsoleSender().sendMessage(configCZ.getString("Messages.Command.NotPlayer"));
+                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
             }
 
         }

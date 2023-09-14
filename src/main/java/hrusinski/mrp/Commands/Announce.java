@@ -28,17 +28,16 @@ public class Announce implements CommandExecutor {
         }
 
         for (Player players : Bukkit.getOnlinePlayers()) {
-            if(config.getString("region").equals("EN")){
+            if (config.isSet("region")) {
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Announce").replaceAll("%text%", text)));
+            } else {
                 File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                 FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.Announce").replaceAll("%text%", text)));
-
-            } else {
-                File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.Announce").replaceAll("%text%", text)));
+                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
             }
         }
         return true;

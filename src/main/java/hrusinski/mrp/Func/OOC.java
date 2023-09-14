@@ -26,18 +26,16 @@ public class OOC implements Listener {
 
         String message = event.getMessage();
 
-        if(config.getString("region").equals("EN")){
+        if (config.isSet("region")) {
+            File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+            FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+            event.setFormat(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.OOC").replaceAll("%nick%", pname).replaceAll("%message%", message)));
+        } else {
             File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-            event.setFormat(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.OOC").replaceAll("%nick%", pname).replaceAll("%message%", message)));
-        } else {
-            File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-            FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-            event.setFormat(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.OOC").replaceAll("%nick%", pname).replaceAll("%message%", message)));
+            player.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
         }
-
-
     }
 }

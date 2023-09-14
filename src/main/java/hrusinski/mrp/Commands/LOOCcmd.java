@@ -33,39 +33,37 @@ public class LOOCcmd implements CommandExecutor {
                 text += args[i] + " ";
             }
 
-            File fileCC = new File(MRP.instance.getDataFolder(), "/CC/" + pname + ".yml");
-            FileConfiguration configCC = YamlConfiguration.loadConfiguration(fileCC);
-
             for (Player players : Bukkit.getOnlinePlayers()) {
                 if (player.getLocation().distanceSquared(players.getLocation()) <= config.getDouble("Func.LOOCDistance")) {
-                    if (config.getString("region").equals("EN")) {
+                    if (config.isSet("region")) {
+                        File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                        FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.LOOC").replaceAll("%nick%", pname).replaceAll("%text%", text)));
+                    } else {
                         File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                         FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.LOOC").replaceAll("%nick%", pname).replaceAll("%text%", text)));
-                    } else {
-                        File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                        FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.LOOC").replaceAll("%nick%", pname).replaceAll("%text%", text)));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.WrongLanguage")));
                     }
                 }
             }
 
         } else {
-            if (config.getString("region").equals("EN")) {
+            if (config.isSet("region")) {
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));
+            } else {
                 File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                 FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.Command.NotPlayer"));
-            } else {
-                File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                sender.getServer().getConsoleSender().sendMessage(configCZ.getString("Messages.Command.NotPlayer"));
+                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
             }
 
         }
         return true;
+
     }
 }

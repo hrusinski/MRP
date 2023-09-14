@@ -19,25 +19,25 @@ public class CitizenCard {
         File fileCC = new File(MRP.instance.getDataFolder(), "/CC/"+pname+".yml");
         FileConfiguration configCC = YamlConfiguration.loadConfiguration(fileCC);
 
-        if(config.getString("region").equals("EN")) {
-            File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
-            FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
+         if (config.isSet("region")) {
+             File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+             FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-            configCC.set("Info."+configEN.getString("CC.Name"), "Steve");
-            configCC.set("Info."+configEN.getString("CC.Surname"), "Mine");
-            configCC.set("Info."+configEN.getString("CC.Age"), "21");
-            configCC.set("Info."+configEN.getString("CC.Gender"), "Male");
-            configCC.set("Info."+configEN.getString("CC.Nationality"), "MineNation");
-        } else {
-            File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-            FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
+             configCC.set("Info."+configLan.getString("CC.Name"), "Steve");
+             configCC.set("Info."+configLan.getString("CC.Surname"), "Mine");
+             configCC.set("Info."+configLan.getString("CC.Age"), "21");
+             configCC.set("Info."+configLan .getString("CC.Gender"), "Male");
+             configCC.set("Info."+configLan.getString("CC.Nationality"), "MineNation");
+         } else {
+             File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
+             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-            configCC.set("Info."+configCZ.getString("CC.Name"), "Steve");
-            configCC.set("Info."+configCZ.getString("CC.Surname"), "Mine");
-            configCC.set("Info."+configCZ.getString("CC.Age"), "21");
-            configCC.set("Info."+configCZ.getString("CC.Gender"), "Muž");
-            configCC.set("Info."+configCZ.getString("CC.Nationality"), "MineNárod");
-        }
+             configCC.set("Info."+configEN.getString("CC.Name"), "Steve");
+             configCC.set("Info."+configEN.getString("CC.Surname"), "Mine");
+             configCC.set("Info."+configEN .getString("CC.Age"), "21");
+             configCC.set("Info."+configEN.getString("CC.Gender"), "Male");
+             configCC.set("Info."+configEN.getString("CC.Nationality"), "MineNation");
+         }
 
         try {
             configCC.save(fileCC);

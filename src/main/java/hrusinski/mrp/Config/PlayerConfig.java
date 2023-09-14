@@ -17,7 +17,7 @@ public class PlayerConfig implements Listener {
 
         String pname = player.getName();
 
-        File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
+        File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
         configP.set("IP", player.getAddress().toString());

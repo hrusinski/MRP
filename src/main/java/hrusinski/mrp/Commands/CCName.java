@@ -30,18 +30,17 @@ public class CCName implements CommandExecutor {
             FileConfiguration configCC = YamlConfiguration.loadConfiguration(fileCC);
 
             if(args.length == 1){
-                if(config.getString("region").equals("EN")){
+                if (config.isSet("region")) {
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                    configCC.set("Info.Name", args[0].toString());
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.CC.Name")));
+                } else {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    configCC.set("Info.Name", args[0].toString());
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.Command.CC.Name")));
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-
-                    configCC.set("Info.Name", args[0].toString());
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configCZ.getString("Messages.Command.CC.Name")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.WrongLanguage")));
                 }
                 try {
                     configCC.save(fileCC);
@@ -49,28 +48,31 @@ public class CCName implements CommandExecutor {
                     e.printStackTrace(System.out);
                 }
             } else {
-                if(config.getString("region").equals("EN")){
+                if (config.isSet("region")) {
+                    File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                    FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                    sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.Error"));
+                } else {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
-                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.Command.Error"));
-                } else {
-                    File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                    FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-                    sender.getServer().getConsoleSender().sendMessage(configCZ.getString("Messages.Command.Error"));
+
+                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
                 }
             }
 
         } else {
-            if(config.getString("region").equals("EN")){
+            if (config.isSet("region")) {
+                File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + "yml");
+                FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
+                sender.getServer().getConsoleSender().sendMessage(configLan.getString("Messages.Command.NotPlayer"));
+            } else {
                 File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                 FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
-                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.Command.NotPlayer"));
-            } else {
-                File fileCZ = new File(MRP.instance.getDataFolder(), "region/CZ.yml");
-                FileConfiguration configCZ = YamlConfiguration.loadConfiguration(fileCZ);
-                sender.getServer().getConsoleSender().sendMessage(configCZ.getString("Messages.Command.NotPlayer"));
-            }
 
+                sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
+            }
         }
         return true;
     }
