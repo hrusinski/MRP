@@ -1,42 +1,42 @@
-[08:24:16] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[08:24:18] [ServerMain/INFO]: Loaded 7 recipes
-[08:24:18] [Server thread/INFO]: Starting minecraft server version 1.20.1
-[08:24:18] [Server thread/INFO]: Loading properties
-[08:24:18] [Server thread/INFO]: This server is running Paper version git-Paper-176 (MC: 1.20.1) (Implementing API version 1.20.1-R0.1-SNAPSHOT) (Git: 517f8fb)
-[08:24:18] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[08:24:18] [Server thread/INFO]: Using 4 threads for Netty based IO
-[08:24:18] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[12:08:28] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[12:08:30] [ServerMain/INFO]: Loaded 7 recipes
+[12:08:30] [Server thread/INFO]: Starting minecraft server version 1.20.1
+[12:08:30] [Server thread/INFO]: Loading properties
+[12:08:30] [Server thread/INFO]: This server is running Paper version git-Paper-176 (MC: 1.20.1) (Implementing API version 1.20.1-R0.1-SNAPSHOT) (Git: 517f8fb)
+[12:08:31] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:08:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:08:31] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[08:24:18] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 4 worker threads, and gen parallelism of 4 threads
-[08:24:19] [Server thread/INFO]: Default game type: SURVIVAL
-[08:24:19] [Server thread/INFO]: Generating keypair
-[08:24:19] [Server thread/INFO]: Starting Minecraft server on *:25565
-[08:24:19] [Server thread/INFO]: Using default channel type
-[08:24:19] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[08:24:19] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[08:24:19] [Server thread/INFO]: [MRP] Loading server plugin MRP v1.0
-[08:24:19] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[08:24:19] [Server thread/INFO]: Preparing level "world"
-[08:24:20] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[08:24:20] [Server thread/INFO]: Time elapsed: 372 ms
-[08:24:20] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[08:24:20] [Server thread/INFO]: Time elapsed: 48 ms
-[08:24:20] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[08:24:20] [Server thread/INFO]: Time elapsed: 26 ms
-[08:24:20] [Server thread/INFO]: [MRP] Enabling MRP v1.0
-[08:24:22] [Server thread/INFO]: MRP plugin is enabling
-[08:24:22] [Server thread/INFO]: MRP plugin is enabling.
-[08:24:22] [Server thread/INFO]: MRP plugin is enabling..
-[08:24:22] [Server thread/INFO]: MRP plugin is enabling...
-[08:24:22] [Server thread/INFO]: MRP plugin was enabled
-[08:24:22] [Server thread/INFO]: Running delayed init tasks
-[08:24:22] [Server thread/INFO]: Done (4.166s)! For help, type "help"
-[08:24:22] [Server thread/INFO]: Timings Reset
-[08:24:53] [User Authenticator #0/INFO]: UUID of player Hrusa_ is 2a62f8e9-8c21-47c4-973d-4502d9ca8cd9
-[08:24:55] [Server thread/ERROR]: Could not pass event PlayerJoinEvent to MRP v1.0
+[12:08:31] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 4 worker threads, and gen parallelism of 4 threads
+[12:08:31] [Server thread/INFO]: Default game type: SURVIVAL
+[12:08:31] [Server thread/INFO]: Generating keypair
+[12:08:31] [Server thread/INFO]: Starting Minecraft server on *:25565
+[12:08:31] [Server thread/INFO]: Using default channel type
+[12:08:31] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[12:08:31] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[12:08:32] [Server thread/INFO]: [MRP] Loading server plugin MRP v1.0
+[12:08:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:08:32] [Server thread/INFO]: Preparing level "world"
+[12:08:32] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:08:32] [Server thread/INFO]: Time elapsed: 312 ms
+[12:08:32] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[12:08:32] [Server thread/INFO]: Time elapsed: 29 ms
+[12:08:32] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[12:08:32] [Server thread/INFO]: Time elapsed: 24 ms
+[12:08:32] [Server thread/INFO]: [MRP] Enabling MRP v1.0
+[12:08:35] [Server thread/INFO]: MRP plugin is enabling
+[12:08:35] [Server thread/INFO]: MRP plugin is enabling.
+[12:08:35] [Server thread/INFO]: MRP plugin is enabling..
+[12:08:35] [Server thread/INFO]: MRP plugin is enabling...
+[12:08:35] [Server thread/INFO]: MRP plugin was enabled
+[12:08:35] [Server thread/INFO]: Running delayed init tasks
+[12:08:35] [Server thread/INFO]: Done (4.230s)! For help, type "help"
+[12:08:35] [Server thread/INFO]: Timings Reset
+[12:08:37] [User Authenticator #0/INFO]: UUID of player Hrusa_ is 2a62f8e9-8c21-47c4-973d-4502d9ca8cd9
+[12:08:39] [Server thread/ERROR]: Could not pass event PlayerJoinEvent to MRP v1.0
 java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "org.bukkit.configuration.file.FileConfiguration.getString(String)" is null
-	at hrusinski.mrp.Listeners.PlayerJoinQuit.PlayerJoinChat(PlayerJoinQuit.java:64) ~[MRP-1.0.jar:?]
+	at hrusinski.mrp.Listeners.PlayerJoinQuit.PlayerJoinChat(PlayerJoinQuit.java:63) ~[MRP-1.0.jar:?]
 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor2.execute(Unknown Source) ~[?:?]
 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.1-R0.1-SNAPSHOT.jar:?]
 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.1-R0.1-SNAPSHOT.jar:git-Paper-176]
@@ -56,47 +56,43 @@ java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because th
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1170) ~[paper-1.20.1.jar:git-Paper-176]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:317) ~[paper-1.20.1.jar:git-Paper-176]
 	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-[08:24:55] [Server thread/INFO]: Hrusa_ came to city!
-[08:24:55] [Server thread/INFO]: Hrusa_[/127.0.0.1:58606] logged in with entity id 166 at ([world]569.9574264703855, 67.0, -364.73828037806675)
-[08:25:16] [Server thread/INFO]: Hrusa_ issued server command: /me kouøí péro
-[08:25:33] [Server thread/INFO]: Hrusa_ issued server command: /do chutná mu?
-[08:25:35] [Server thread/INFO]: Hrusa_ issued server command: /do ne
-[08:25:56] [Server thread/INFO]: Hrusa_ issued server command: /announce Arthur je gay
-[08:25:57] [Server thread/INFO]: Hrusa_ issued server command: /announce Arthur je gay
-[08:25:57] [Server thread/INFO]: Hrusa_ issued server command: /announce Arthur je gay
-[08:26:08] [Server thread/INFO]: Hrusa_ issued server command: /announce Artur je gay
-[08:26:18] [Server thread/INFO]: Hrusa_ issued server command: /announce Artur je Gay!
-[08:29:09] [Server thread/INFO]: Stopping the server
-[08:29:09] [Server thread/INFO]: Stopping server
-[08:29:09] [Server thread/INFO]: [MRP] Disabling MRP v1.0
-[08:29:09] [Server thread/INFO]: MRP plugin is disabling
-[08:29:09] [Server thread/INFO]: MRP plugin is disabling.
-[08:29:09] [Server thread/INFO]: MRP plugin is disabling..
-[08:29:09] [Server thread/INFO]: MRP plugin is disabling...
-[08:29:09] [Server thread/INFO]: MRP plugin was disabled
-[08:29:09] [Server thread/INFO]: Saving players
-[08:29:09] [Server thread/INFO]: Hrusa_ lost connection: Server closed
-[08:29:09] [Server thread/INFO]: Hrusa_ left the game
-[08:29:09] [Server thread/INFO]: Saving worlds
-[08:29:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[08:29:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[08:29:09] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[08:29:09] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[08:29:11] [Server thread/INFO]: [ChunkHolderManager] Saved 1458 block chunks, 1458 entity chunks, 0 poi chunks in world 'world' in 1,93s
-[08:29:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[08:29:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[08:29:11] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[08:29:11] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[08:29:11] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[08:29:12] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,52s
-[08:29:12] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[08:29:12] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[08:29:12] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[08:29:12] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[08:29:12] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[08:29:12] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,11s
-[08:29:12] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[08:29:12] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[08:29:12] [Server thread/INFO]: Flushing Chunk IO
-[08:29:12] [Server thread/INFO]: Closing Thread Pool
-[08:29:12] [Server thread/INFO]: Closing Server
+[12:08:39] [Server thread/INFO]: Hrusa_ left city.
+[12:08:39] [Server thread/INFO]: Hrusa_[/127.0.0.1:50456] logged in with entity id 159 at ([world]565.8042627081078, 67.0, -364.50357426482145)
+[12:08:42] [Async Chat Thread - #1/INFO]: [OOC] Hrusa_ ggg
+[12:08:43] [Async Chat Thread - #0/INFO]: [OOC] Hrusa_ ggg
+[12:08:44] [Async Chat Thread - #1/INFO]: [OOC] Hrusa_ gg
+[12:08:47] [Server thread/INFO]: Hrusa_ issued server command: /me lg kg
+[12:08:49] [Server thread/INFO]: Hrusa_ lost connection: Disconnected
+[12:08:49] [Server thread/INFO]: Hrusa_ left city.
+[12:09:02] [Server thread/INFO]: Stopping the server
+[12:09:02] [Server thread/INFO]: Stopping server
+[12:09:02] [Server thread/INFO]: [MRP] Disabling MRP v1.0
+[12:09:02] [Server thread/INFO]: MRP plugin is disabling
+[12:09:02] [Server thread/INFO]: MRP plugin is disabling.
+[12:09:02] [Server thread/INFO]: MRP plugin is disabling..
+[12:09:02] [Server thread/INFO]: MRP plugin is disabling...
+[12:09:02] [Server thread/INFO]: MRP plugin was disabled
+[12:09:02] [Server thread/INFO]: Saving players
+[12:09:03] [Server thread/INFO]: Saving worlds
+[12:09:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[12:09:03] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[12:09:03] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[12:09:03] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Saved 1107 block chunks, 1107 entity chunks, 0 poi chunks in world 'world' in 1,27s
+[12:09:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[12:09:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,47s
+[12:09:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12:09:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[12:09:04] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,12s
+[12:09:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12:09:04] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[12:09:04] [Server thread/INFO]: Flushing Chunk IO
+[12:09:04] [Server thread/INFO]: Closing Thread Pool
+[12:09:04] [Server thread/INFO]: Closing Server
