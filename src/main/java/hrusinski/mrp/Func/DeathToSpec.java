@@ -36,7 +36,7 @@ public class DeathToSpec implements Listener {
 
                 player.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
             }
-            File fileP = new File(MRP.instance.getDataFolder(), pname+".yml");
+            File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
             FileConfiguration configP = YamlConfiguration.loadConfiguration(file);
             configP.set("Status", "Died");
             try {

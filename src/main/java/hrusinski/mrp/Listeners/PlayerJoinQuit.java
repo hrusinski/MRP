@@ -29,7 +29,7 @@ public class PlayerJoinQuit implements Listener {
         Player player = event.getPlayer();
         String pname = player.getName();
 
-        File fileCC = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
+        File fileCC = new File(MRP.instance.getDataFolder(), "/CC/"+pname+".yml");
 
         File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
