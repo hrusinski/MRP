@@ -25,6 +25,16 @@ public class DeathToSpec implements Listener {
 
         if (config.getBoolean("Func.OneLive")){
             player.setGameMode(GameMode.SPECTATOR);
+
+            File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
+            FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
+
+            configP.set("Status", "Died");
+            try {
+                configP.save(fileP);
+            } catch (IOException e){
+                e.printStackTrace(System.out);
+            }
         }
     }
 }

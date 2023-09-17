@@ -33,3 +33,6 @@ commands:
 
   announce:
     usage: /announce {text}
+
+  try:
+    usage: /try

@@ -3,9 +3,11 @@ package hrusinski.mrp.Config;
 import hrusinski.mrp.MRP;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
 
 public class Language {
 
@@ -33,6 +35,7 @@ public class Language {
         configCZ.set("Messages.Command.Do", "&b&l[DO] &r&4%name% %action%");
         configCZ.set("Messages.Command.LOOC", "&b&l[LOOC] &r&4%nick% %text%");
         configCZ.set("Messages.Command.Announce", "&c&l[OZNÁMENÍ] &f&l%text%");
+        configCZ.set("Messages.Command.Try", "&b&l[TRY] &r&f %name% %try%");
         configCZ.set("Messages.OOC", "&b&l[OOC] &r&4%nick% %message%");
         configCZ.set("Messages.CC.Name", "&4Jméno: ");
         configCZ.set("Messages.CC.Surname", "&4Přijmení: ");
@@ -44,6 +47,12 @@ public class Language {
         configCZ.set("CC.Age", "Věk");
         configCZ.set("CC.Gender", "Pohlaví");
         configCZ.set("CC.Nationality", "Národnost");
+
+        List<String> tryList = new ArrayList<>();
+        tryList.add("Ano");
+        tryList.add("Ne");
+
+        configCZ.set("Try", tryList);
 
         try{
             configCZ.save(fileCZ);
@@ -76,6 +85,7 @@ public class Language {
         configEN.set("Messages.Command.Do", "&b&l[DO] &r&f%name% %action%");
         configEN.set("Messages.Command.LOOC", "&b&l[LOOC] &r&f%nick% %text%");
         configEN.set("Messages.Command.Announce", "&c&l[ANNOUNCEMENT] &f&l%text%");
+        configEN.set("Messages.Command.Try", "&b&l[TRY] &r&f %name% %try%");
         configEN.set("Messages.OOC", "&b&l[OOC] &r&f%nick% %message%");
         configEN.set("Messages.CC.Name", "&fName: ");
         configEN.set("Messages.CC.Surname", "&fSurname: ");
@@ -87,6 +97,12 @@ public class Language {
         configEN.set("CC.Age", "Age");
         configEN.set("CC.Gender", "Gender");
         configEN.set("CC.Nationality", "Nationality");
+
+        List<String> tryList = new ArrayList<>();
+        tryList.add("Ano");
+        tryList.add("Ne");
+
+        configEN.set("Try", tryList);
 
         try{
             configEN.save(fileEN);
