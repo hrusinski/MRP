@@ -36,3 +36,6 @@ commands:
 
   try:
     usage: /try
+
+  doc:
+    usage: /doc {number}

@@ -87,6 +87,7 @@ public final class MRP extends JavaPlugin {
         getCommand("me").setExecutor(new MEcmd());
         getCommand("do").setExecutor(new DOcmd());
         getCommand("try").setExecutor(new TRYcmd());
+        getCommand("doc").setExecutor(new DOCcmd());
 
         getCommand("announce").setExecutor(new Announce());
 
