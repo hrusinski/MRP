@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 public class DOCcmd implements CommandExecutor {
 
@@ -36,8 +37,13 @@ public class DOCcmd implements CommandExecutor {
                         File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-                        for (int doc = 0; doc != Integer.parseInt(args[0]); doc++) {
+                        for (int doc = 0; doc < Integer.parseInt(args[0]); doc++) {
                             players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Doc").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%doc%", String.valueOf(doc))));
+                            try {
+                                TimeUnit.SECONDS.sleep(1);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     } else {
                         File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");

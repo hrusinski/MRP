@@ -101,8 +101,8 @@ public class Language {
         configEN.set("CC.Nationality", "Nationality");
 
         List<String> tryList = new ArrayList<>();
-        tryList.add("Ano");
-        tryList.add("Ne");
+        tryList.add("Yes");
+        tryList.add("No");
 
         configEN.set("Try", tryList);
 
