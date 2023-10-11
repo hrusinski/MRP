@@ -12,7 +12,9 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
@@ -39,15 +41,13 @@ public class TRYcmd implements CommandExecutor {
                         File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-                        String [] trylist = { Arrays.toString(configLan.getStringList("Try").toArray()) };
+                        List<String> tryList = new ArrayList<>(Arrays.asList(configLan.getList("Try").toString()));
 
                         Random random = new Random();
 
-                        int random_int = trylist.length;
+                        String tryMessage = tryList.get(random.nextInt(tryList.size()));
 
-                        String trymessage = trylist[random_int];
-
-                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Try").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%try%", trymessage)));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Try").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%try%", tryMessage)));
                     } else {
                         File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                         FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);

@@ -49,9 +49,7 @@ public class Language {
         configCZ.set("CC.Gender", "Pohlaví");
         configCZ.set("CC.Nationality", "Národnost");
 
-        List<String> tryList = new ArrayList<>();
-        tryList.add("Ano");
-        tryList.add("Ne");
+        List<String> tryList = new ArrayList<>(Arrays.asList("Ano", "Ne"));
 
         configCZ.set("Try", tryList);
 
@@ -100,9 +98,7 @@ public class Language {
         configEN.set("CC.Gender", "Gender");
         configEN.set("CC.Nationality", "Nationality");
 
-        List<String> tryList = new ArrayList<>();
-        tryList.add("Yes");
-        tryList.add("No");
+        List<String> tryList = new ArrayList<>(Arrays.asList("Yes", "No"));
 
         configEN.set("Try", tryList);
 
