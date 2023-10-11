@@ -13,6 +13,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import static hrusinski.mrp.Config.PlayerConfig.createPlayerConfig;
@@ -63,7 +64,7 @@ public class PlayerJoinQuit implements Listener {
         File filePNewer = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
         FileConfiguration configPNewer = YamlConfiguration.loadConfiguration(filePNewer);
 
-        if (configPNewer.getString("Status").equals("Dead") || configPNewer.getString("Status").equals("Died")){
+        if (Objects.equals(configPNewer.getString("Status"), "Dead") || Objects.equals(configPNewer.getString("Status"), "Died")){
             player.setGameMode(GameMode.SPECTATOR);
         }
     }
