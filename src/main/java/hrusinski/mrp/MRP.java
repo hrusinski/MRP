@@ -1,7 +1,7 @@
 package hrusinski.mrp;
 
 import hrusinski.mrp.Commands.*;
-import hrusinski.mrp.Func.DeathToSpec;
+import hrusinski.mrp.Func.OneLive;
 import hrusinski.mrp.Func.OOC;
 import hrusinski.mrp.Listeners.PlayerJoinQuit;
 import org.bukkit.Bukkit;
@@ -65,7 +65,7 @@ public final class MRP extends JavaPlugin {
         }
 
         getServer().getPluginManager().registerEvents(new PlayerJoinQuit(), this);
-        getServer().getPluginManager().registerEvents(new DeathToSpec(), this);
+        getServer().getPluginManager().registerEvents(new OneLive(), this);
 
         getServer().getPluginManager().registerEvents(new OOC(), this);
 

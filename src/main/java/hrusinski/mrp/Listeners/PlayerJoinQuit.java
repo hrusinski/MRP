@@ -33,7 +33,6 @@ public class PlayerJoinQuit implements Listener {
         File fileCC = new File(MRP.instance.getDataFolder(), "/CC/"+ pname+".yml");
 
         File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
-        FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
         if (!fileCC.exists()) {
             createCC(player);
@@ -60,13 +59,6 @@ public class PlayerJoinQuit implements Listener {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-        File filePNewer = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
-        FileConfiguration configPNewer = YamlConfiguration.loadConfiguration(filePNewer);
-
-        if (Objects.equals(configPNewer.getString("Status"), "Dead") || Objects.equals(configPNewer.getString("Status"), "Died")){
-            player.setGameMode(GameMode.SPECTATOR);
-        }
     }
 
     @EventHandler
@@ -90,16 +82,6 @@ public class PlayerJoinQuit implements Listener {
             FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
             event.setQuitMessage(configEN.getString("Messages.WrongLanguage"));
-        }
-        try {
-            configCC.save(fileCC);
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
-        try {
-            configP.save(fileP);
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
         }
     }
 }
