@@ -45,11 +45,7 @@ public class CC implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
-                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
+                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
                 }
             } else if (args.length == 0) {
                 if (config.isSet("region")) {
@@ -65,11 +61,7 @@ public class CC implements CommandExecutor {
                     File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                     FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
 
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Name") + configCC.getString("Info.Name")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Surname") + configCC.getString("Info.Surname")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Age") + configCC.getString("Info.Age")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Gender") + configCC.getString("Info.Gender")));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configEN.getString("Messages.CC.Nationality") + configCC.getString("Info.Nationality")));
+                    sender.getServer().getConsoleSender().sendMessage(configEN.getString("Messages.WrongLanguage"));
                 }
             } else if (args.length == 1) {
                 if (config.isSet("region")) {

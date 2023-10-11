@@ -41,13 +41,13 @@ public class TRYcmd implements CommandExecutor {
                         File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-                        List<String> tryList = new ArrayList<>(Arrays.asList(configLan.getList("Try").toString()));
+                        List<String> tryList = configLan.getStringList("Try");
 
                         Random random = new Random();
 
                         String tryMessage = tryList.get(random.nextInt(tryList.size()));
 
-                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Try").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%try%", tryMessage)));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Try").replaceAll("%name%", configCC.getString("Info.Name")+" " + configCC.getString("Info.Surname")).replaceAll("%try%", tryMessage)));
                     } else {
                         File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                         FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);

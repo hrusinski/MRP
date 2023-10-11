@@ -38,7 +38,7 @@ public class DOCcmd implements CommandExecutor {
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
                         for (int doc = 0; doc < Integer.parseInt(args[0]); doc++) {
-                            players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Doc").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%doc%", String.valueOf(doc))));
+                            players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Doc").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%doc%", String.valueOf(doc+1))));
                             try {
                                 TimeUnit.SECONDS.sleep(1);
                             } catch (InterruptedException e) {

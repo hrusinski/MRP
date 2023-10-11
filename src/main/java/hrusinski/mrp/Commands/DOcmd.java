@@ -42,7 +42,7 @@ public class DOcmd implements CommandExecutor {
                         File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
                         FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
 
-                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Do").replaceAll("%name%", configCC.getString("Info.Name") + configCC.getString("Info.Surname")).replaceAll("%action%", action)));
+                        players.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Do").replaceAll("%name%", configCC.getString("Info.Name")+" " + configCC.getString("Info.Surname")).replaceAll("%action%", action)));
                     } else {
                         File fileEN = new File(MRP.instance.getDataFolder(), "region/EN.yml");
                         FileConfiguration configEN = YamlConfiguration.loadConfiguration(fileEN);
