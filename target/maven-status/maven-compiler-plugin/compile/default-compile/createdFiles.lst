@@ -1,9 +1,9 @@
 hrusinski\mrp\Commands\CC.class
-hrusinski\mrp\Func\DeathToSpec.class
 hrusinski\mrp\Commands\Announce.class
 hrusinski\mrp\Commands\CCSurname.class
 hrusinski\mrp\Func\OOC.class
 hrusinski\mrp\Commands\LOOCcmd.class
+hrusinski\mrp\Func\OneLive.class
 hrusinski\mrp\Commands\CCNationality.class
 hrusinski\mrp\Func\CustomHp.class
 hrusinski\mrp\Commands\CCAge.class

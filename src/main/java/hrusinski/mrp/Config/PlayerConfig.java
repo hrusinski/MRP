@@ -21,7 +21,8 @@ public class PlayerConfig implements Listener {
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
         configP.set("IP", player.getAddress().toString());
-        configP.set("Status", "Dead");
+        configP.set("GameMode", "SPECTATOR");
+        configP.set("Died", false);
 
         try {
             configP.save(fileP);
