@@ -32,31 +32,33 @@ public class LOGINcmd implements CommandExecutor {
                 File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname + ".yml");
                 FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
-                if (config.getBoolean("Func.Login")) {
+                // Je už přihlášený?
+                if (!configP.getBoolean("Logged")) {
+                    // Má nastavené heslo?
                     if (configP.isSet("Password")) {
-                        if (args.length == 1) {
-                            if (args[0] == configP.getString("Password")) {
-                                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.LoginSuccess")));
-                                configP.set("Logged", true);
-                                try {
-                                    configP.save(fileP);
-                                } catch (IOException e) {
-                                    e.printStackTrace(System.out);
-                                }
+                        // Zadal správně hesla?
+                        if (args.length == 1 && args[0].equals(configP.getString("Password"))) {
+                            // Nastavit heslo a pustit
+                            configP.set("Logged", true);
+                            try {
+                                configP.save(fileP);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
                             }
+                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Login.Successful")));
                         } else {
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.LoginFail")));
+                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Login")));
                         }
                     } else {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Register")));
                     }
+                } else {
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Login")));
                 }
             } else {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.NotPlayer")));
             }
-        }
-        else
-        {
+        } else {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.WrongLanguage")));
         }
         return true;

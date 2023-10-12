@@ -19,10 +19,13 @@ public class Language {
         configCZ.set("Logger.EnablePlugin", " plugin se zapnul");
         configCZ.set("Logger.DisablingPlugin", " plugin se vypíná");
         configCZ.set("Logger.DisablePlugin", " plugin se vypnul");
+
         configCZ.set("Messages.WrongLanguage", "&4&lŠpatně nastavený region(jazyk)!");
         configCZ.set("Messages.Events.PlayerJoin", "&6&l%player% &r&6přišel do města!");
         configCZ.set("Messages.Events.PlayerQuit", "&6&l%player% &r&6odešel z města.");
         configCZ.set("Messages.Events.Death", "&c&l%player% &r&cumřel.");
+        configCZ.set("Messages.Login.TooLongTime", "&cByl jsi vyhozen, trvá ti se přihlásit.");
+
         configCZ.set("Messages.Command.NotPlayer", "&4Tento příkaz smí použít pouze hráč.");
         configCZ.set("Messages.Command.CC.Name", "&2Změnil sis jméno.");
         configCZ.set("Messages.Command.CC.Surname", "&2Změnil sis přijmení.");
@@ -37,6 +40,14 @@ public class Language {
         configCZ.set("Messages.Command.Announce", "&c&l[OZNÁMENÍ] &f&l%text%");
         configCZ.set("Messages.Command.Try", "&b&l[TRY] &r&f %name% %try%");
         configCZ.set("Messages.Command.Doc", "&b&l[DOC] &r&f %name% %doc%");
+
+        configCZ.set("Messages.Command.Login", "&b&l[LOGIN] &r&bzadej /login <heslo>");
+        configCZ.set("Messages.Command.LoginSuccess", "&b&l[LOGIN] &r&búspěšný login");
+        configCZ.set("Messages.Command.LoginFail", "&b&l[LOGIN] &r&cšpatné heslo");
+        configCZ.set("Messages.Command.Register", "&b&l[REGISTER] &r&bzadej /register <heslo> <heslo>");
+        configCZ.set("Messages.Command.RegisterSuccess", "&b&l[REGISTER] &r&búspěšné registrování");
+        configCZ.set("Messages.Command.RegisterFail", "&b&l[REGISTER] &r&cšpatné heslo");
+
         configCZ.set("Messages.OOC", "&b&l[OOC] &r&4%nick% %message%");
         configCZ.set("Messages.CC.Name", "&4Jméno: ");
         configCZ.set("Messages.CC.Surname", "&4Přijmení: ");
@@ -68,10 +79,13 @@ public class Language {
         configEN.set("Logger.EnablePlugin", " plugin was enabled");
         configEN.set("Logger.DisablingPlugin", " plugin is disabling");
         configEN.set("Logger.DisablePlugin", " plugin was disabled");
+
         configEN.set("Messages.WrongLanguage", "&4&lWrong set region(language)!");
         configEN.set("Messages.Events.PlayerJoin", "&6&l%player% &r&6came to city!");
         configEN.set("Messages.Events.PlayerQuit", "&6&l%player% &r&6left city.");
         configEN.set("Messages.Events.Death", "&c&l%player% &r&died.");
+        configEN.set("Messages.Login.TooLongTime", "&cYou have been kicked for taking too long.");
+
         configEN.set("Messages.Command.NotPlayer", "&4This command can execute player only.");
         configEN.set("Messages.Command.CC.Name", "&2You changed your name.");
         configEN.set("Messages.Command.CC.Surname", "&2You changed your surname.");
@@ -86,12 +100,14 @@ public class Language {
         configEN.set("Messages.Command.Announce", "&c&l[ANNOUNCEMENT] &f&l%text%");
         configEN.set("Messages.Command.Try", "&b&l[TRY] &r&f %name% %try%");
         configEN.set("Messages.Command.Doc", "&b&l[DOC] &r&f %name% %doc%");
+
         configEN.set("Messages.Command.Login", "&b&l[LOGIN] &r&btype /login <password>");
         configEN.set("Messages.Command.LoginSuccess", "&b&l[LOGIN] &r&bsuccessful login");
         configEN.set("Messages.Command.LoginFail", "&b&l[LOGIN] &r&cwrong password");
         configEN.set("Messages.Command.Register", "&b&l[REGISTER] &r&btype /register <password> <password>");
         configEN.set("Messages.Command.RegisterSuccess", "&b&l[REGISTER] &r&bsuccesful register");
         configEN.set("Messages.Command.RegisterFail", "&b&l[REGISTER] &r&cwrong password");
+
         configEN.set("Messages.OOC", "&b&l[OOC] &r&f%nick% %message%");
         configEN.set("Messages.CC.Name", "&fName: ");
         configEN.set("Messages.CC.Surname", "&fSurname: ");

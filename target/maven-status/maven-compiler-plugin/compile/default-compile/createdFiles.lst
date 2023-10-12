@@ -22,3 +22,4 @@ hrusinski\mrp\Commands\DOCcmd.class
 hrusinski\mrp\Commands\CCName.class
 hrusinski\mrp\Listeners\PlayerJoinQuit.class
 hrusinski\mrp\Config\Language.class
+hrusinski\mrp\Func\LoginPlayer$1.class
