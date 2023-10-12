@@ -39,3 +39,9 @@ commands:
 
   doc:
     usage: /doc {number}
+
+  login:
+    usage: /login {password}
+
+  register:
+    usage: /register {password} {password}

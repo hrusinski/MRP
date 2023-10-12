@@ -1,6 +1,7 @@
 package hrusinski.mrp.Func;
 
 import hrusinski.mrp.MRP;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -25,15 +26,23 @@ public class LoginPlayer implements Listener {
         File fileP = new File(MRP.instance.getDataFolder(), "/players/" + pname+".yml");
         FileConfiguration configP = YamlConfiguration.loadConfiguration(fileP);
 
+        File fileLan = new File(MRP.instance.getDataFolder(), "region/" + config.getString("region") + ".yml");
+        FileConfiguration configLan = YamlConfiguration.loadConfiguration(fileLan);
+
         if (config.getBoolean("Func.Login")) {
             if (!configP.getBoolean("Logged")) {
-
 
                 PlayerInventory pInv = player.getInventory();
                 player.setWalkSpeed(0);
                 Location pLoc = player.getLocation();
 
                 player.getInventory().clear();
+
+                if(configP.isSet("Password")){
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Login")));
+                }else {
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', configLan.getString("Messages.Command.Register")));
+                }
 
                 while (!configP.getBoolean("Logged")){
                     player.teleport(pLoc);

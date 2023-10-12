@@ -1,6 +1,7 @@
 package hrusinski.mrp;
 
 import hrusinski.mrp.Commands.*;
+import hrusinski.mrp.Func.LoginPlayer;
 import hrusinski.mrp.Func.OneLive;
 import hrusinski.mrp.Func.OOC;
 import hrusinski.mrp.Listeners.PlayerJoinQuit;
@@ -66,6 +67,7 @@ public final class MRP extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new PlayerJoinQuit(), this);
         getServer().getPluginManager().registerEvents(new OneLive(), this);
+        getServer().getPluginManager().registerEvents(new LoginPlayer(), this);
 
         getServer().getPluginManager().registerEvents(new OOC(), this);
 
@@ -90,6 +92,8 @@ public final class MRP extends JavaPlugin {
         getCommand("doc").setExecutor(new DOCcmd());
 
         getCommand("announce").setExecutor(new Announce());
+        getCommand("login").setExecutor(new LOGINcmd());
+        getCommand("register").setExecutor(new REGISTERcmd());
 
 
         if (config.get("region") == "CZ") {

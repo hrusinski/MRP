@@ -1,8 +1,6 @@
 hrusinski\mrp\Commands\CC.class
 hrusinski\mrp\Commands\Announce.class
-hrusinski\mrp\Commands\CCSurname.class
 hrusinski\mrp\Func\OOC.class
-hrusinski\mrp\Commands\LOOCcmd.class
 hrusinski\mrp\Func\OneLive.class
 hrusinski\mrp\Commands\CCNationality.class
 hrusinski\mrp\Func\CustomHp.class
@@ -13,6 +11,11 @@ hrusinski\mrp\Commands\MEcmd.class
 hrusinski\mrp\Commands\CCGender.class
 hrusinski\mrp\Config\Config.class
 hrusinski\mrp\MRP.class
+hrusinski\mrp\Commands\LOGINcmd.class
+hrusinski\mrp\Commands\CCSurname.class
+hrusinski\mrp\Func\LoginPlayer.class
+hrusinski\mrp\Commands\LOOCcmd.class
+hrusinski\mrp\Commands\REGISTERcmd.class
 hrusinski\mrp\Func\CitizenCard.class
 hrusinski\mrp\Config\PlayerConfig.class
 hrusinski\mrp\Commands\DOCcmd.class
