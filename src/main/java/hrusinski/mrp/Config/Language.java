@@ -86,6 +86,12 @@ public class Language {
         configEN.set("Messages.Command.Announce", "&c&l[ANNOUNCEMENT] &f&l%text%");
         configEN.set("Messages.Command.Try", "&b&l[TRY] &r&f %name% %try%");
         configEN.set("Messages.Command.Doc", "&b&l[DOC] &r&f %name% %doc%");
+        configEN.set("Messages.Command.Login", "&b&l[LOGIN] &r&btype /login <password>");
+        configEN.set("Messages.Command.LoginSuccess", "&b&l[LOGIN] &r&bsuccessful login");
+        configEN.set("Messages.Command.LoginFail", "&b&l[LOGIN] &r&cwrong password");
+        configEN.set("Messages.Command.Register", "&b&l[REGISTER] &r&btype /register <password> <password>");
+        configEN.set("Messages.Command.RegisterSuccess", "&b&l[REGISTER] &r&bsuccesful register");
+        configEN.set("Messages.Command.RegisterFail", "&b&l[REGISTER] &r&cwrong password");
         configEN.set("Messages.OOC", "&b&l[OOC] &r&f%nick% %message%");
         configEN.set("Messages.CC.Name", "&fName: ");
         configEN.set("Messages.CC.Surname", "&fSurname: ");
