@@ -1,6 +1,7 @@
 package hrusinski.mrp.Func;
 
 import hrusinski.mrp.MRP;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -42,7 +43,7 @@ public class LoginPlayer implements Listener {
                 while(true){
                     if(configP.getBoolean("Logged")){
                         player.setWalkSpeed(0.2f);
-                        //nastavit hráči pInv
+                        player.getInventory().setContents(pInv.getContents());
                     }
                 }
             }
