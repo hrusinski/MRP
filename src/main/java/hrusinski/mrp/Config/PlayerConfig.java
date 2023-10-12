@@ -23,6 +23,7 @@ public class PlayerConfig implements Listener {
         configP.set("IP", player.getAddress().toString());
         configP.set("GameMode", "SPECTATOR");
         configP.set("Died", false);
+        configP.set("Logged", false);
 
         try {
             configP.save(fileP);

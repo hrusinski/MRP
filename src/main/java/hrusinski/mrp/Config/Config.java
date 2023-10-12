@@ -28,6 +28,9 @@ public class Config {
         if (!config.isSet("Func.LOOCDistance")) {
             config.set("Func.LOOCDistance", 15);
         }
+        if (!config.isSet("Func.Login")) {
+            config.set("Func.Login", true);
+        }
 
         try {
             config.save(file);
